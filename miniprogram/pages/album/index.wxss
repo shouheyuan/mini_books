@@ -1,0 +1,42 @@
+/* miniprogram/pages/album/index.wxss */
+.bags {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 48%;
+    margin-bottom: 45rpx;
+}
+
+.not-data {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.img_1 {
+    width: 270rpx;
+    height: 236rpx;
+}
+.not-data-text {
+    margin-top: 40rpx;
+}
+
+/* 去标记已读按钮 */
+.and {
+    width: 180rpx;
+    height: 56rpx;
+    border-radius: 12rpx;
+    border: 2rpx solid #14d2b9;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: rgba(35, 211, 157, 1);
+    line-height: 56rpx;
+    margin-top: 50rpx;
+    text-align: center;
+}

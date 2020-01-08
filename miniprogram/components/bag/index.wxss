@@ -1,0 +1,58 @@
+/* components/bag/index.wxss */
+.bag {
+    height: 445rpx;
+    padding: 30rpx;
+    background-color: #f5f6f8;
+    border-radius: 20rpx;
+    margin-bottom: 15rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.info {
+    text-align: center;
+}
+.kind {
+    font-size: 32rpx;
+    color: #535353;
+    font-weight: 500;
+    margin-bottom: 10rpx;
+}
+.total {
+    font-size: 16rpx;
+    font-weight: 300;
+}
+
+.img {
+    width: 45%;
+    border-radius: 15rpx;
+}
+.bag-1 .img { width: 100%; }
+.bag-more { }
+
+/* 动画 */
+
+/*按下缩小*/
+.Press_view {
+    animation: Press_view_key .4s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes Press_view_key {
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    30% {
+        opacity: .8;
+        transform: scale(.95, .95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}

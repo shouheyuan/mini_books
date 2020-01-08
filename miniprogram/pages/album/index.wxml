@@ -1,0 +1,20 @@
+<!--miniprogram/pages/album/index.wxml-->
+<view class="m-40 {{ isAt  ? 'at-show' : 'at-hide'}}">
+	<view class="m-b-60">
+		<view class="font-28 fw-600">已读</view>
+		<view class="font-10 fw-300">{{total}} {{total > 1 ? 'BOOKS' : 'BOOK'}}</view>
+	</view>
+	<view wx:if="{{total}}" class="bags">
+		<view wx:for="{{bags}}" wx:key="index" class="item" data-url="/pages/albumDetail/index?parent_kind={{item._id}}" bindtap="go">
+			<bag props="{{item}}"></bag>
+		</view>
+	</view>
+	<view wx:else>
+		<view class="not-data">
+            <image class="img_1" src="../../img/notArtwork.png"></image>
+			<view class="not-data-text">没有更多了</view>
+			<view class="and" data-url="/pages/add-album/index" bindtap="go">去标记已读</view>
+		</view>
+	</view>
+
+</view>

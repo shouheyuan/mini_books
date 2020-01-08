@@ -1,0 +1,203 @@
+/* 布局 */
+.display-flex {
+    display: flex;
+}
+
+.flex-wrap-wrap {
+    flex-wrap: wrap;
+}
+
+.m-40 {
+    margin: 40rpx;
+}
+
+.m-t-0 {
+    margin-top: 0;
+}
+
+.m-b-0 {
+    margin-bottom: 0;
+}
+
+.m-l-0 {
+    margin-left: 0;
+}
+
+.m-r-0 {
+    margin-right: 0;
+}
+
+.m-t-20 {
+    margin-top: 20rpx;
+}
+
+.m-b-20 {
+    margin-bottom: 20rpx;
+}
+
+.m-l-20 {
+    margin-left: 20rpx;
+}
+
+.m-r-20 {
+    margin-right: 20rpx;
+}
+
+.m-t-30 {
+    margin-top: 30rpx;
+}
+
+.m-b-30 {
+    margin-bottom: 30rpx;
+}
+
+.m-l-30 {
+    margin-left: 30rpx;
+}
+
+.m-r-30 {
+    margin-right: 30rpx;
+}
+
+.m-t-40 {
+    margin-top: 40rpx;
+}
+
+.m-b-40 {
+    margin-bottom: 40rpx;
+}
+
+.m-l-40 {
+    margin-left: 40rpx;
+}
+
+.m-r-40 {
+    margin-right: 40rpx;
+}
+
+.m-t-60 {
+    margin-top: 60rpx;
+}
+
+.m-b-60 {
+    margin-bottom: 60rpx;
+}
+
+.m-l-60 {
+    margin-left: 60rpx;
+}
+
+.m-r-60 {
+    margin-right: 60rpx;
+}
+
+/* 字体-大小 */
+.font-10 {
+    font-size: 20rpx;
+}
+
+.font-14 {
+    font-size: 28rpx;
+}
+
+.font-16 {
+    font-size: 32rpx;
+}
+
+.font-18 {
+    font-size: 36rpx;
+}
+
+.font-28 {
+    font-size: 56rpx;
+}
+
+.font-32 {
+    font-size: 64rpx;
+}
+
+/* 字体-加粗 */
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.hide {
+    display: none;
+}
+
+.center {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 颜色 */
+.text-color-title {
+    color: #353535;
+}
+
+/* 组件 */
+.not-data-text {
+    text-align: center;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+
+.box-shadow {
+    box-shadow: 15rpx 15rpx 50rpx 5rpx rgba(0, 0, 0, 0.2);
+}
+
+.text-ovr1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* 动画 */
+.at-hide {
+	opacity: 0;
+}
+.at-show {
+  animation-name: angry-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+@keyframes angry-animation {
+  0%{
+    opacity: 0;
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60%{
+    opacity: 1;
+    transform: scale3d(1,1,1);
+  }
+}

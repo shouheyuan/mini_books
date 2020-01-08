@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/album/index",
+    "pages/search/index",
+    "pages/detail/index",
+    "pages/albumDetail/index"
+  ],
+  "window": {
+    "backgroundColor": "#FFF",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "已读的书",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#121212",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "img/bar_home.png",
+        "selectedIconPath": "img/bar_home_sel.png"
+      },
+      {
+        "pagePath": "pages/album/index",
+        "text": "书架",
+        "iconPath": "img/bar_Album.png",
+        "selectedIconPath": "img/bar_Album_sel.png"
+      },
+      {
+        "pagePath": "pages/search/index",
+        "text": "探索",
+        "iconPath": "img/bar_explore.png",
+        "selectedIconPath": "img/bar_explore_sel.png"
+      }
+    ]
+  }
+}

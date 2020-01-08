@@ -1,0 +1,28 @@
+<!--miniprogram/pages/detail/index.wxml-->
+<canvas class="canvas" canvas-id="myCanvas"></canvas>
+<view class="book" style="background-color: {{palette}};">
+	<image bindtap="test" mode="widthFix" class="book-cover" src="{{item.cover}}" />
+	<view class="func">
+		<view class="item" bindtap="read">
+			<image wx:if="{{item.isRead === 0}}" class="icon" src="../../img/read.png"></image>
+			<image wx:if="{{item.isRead === 1}}" class="icon" src="../../img/read_ok.png"></image>
+		</view>
+		<button class="item" open-type="share">
+			<image class="icon" src="../../img/share.png"></image>
+		</button>
+	</view>
+	<view class="fill" style="background-color: {{palette}};"></view>
+	<view class="fill" style="background-color: {{palette}};"></view>
+</view>
+<!-- 信息 -->
+<view class="info">
+	<view>
+		<!-- <view class="down-icon"></view> -->
+	</view>
+	<view class="name">{{item.name}} {{}}</view>
+	<view class="author">{{item.author}}</view>
+	<view class="score">
+		<star wx:if="{{item.score}}" score="{{item.score}}"></star>
+	</view>
+	<view class="intro">{{item.intro}}</view>
+</view>

@@ -1,0 +1,2 @@
+<!--components/tag/index.wxml-->
+<text class="tag tag-{{kind}} tag-{{size}}">{{value}}</text>

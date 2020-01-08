@@ -1,0 +1,4 @@
+<!--miniprogram/pages/albumDetail/index.wxml-->
+<view class="m-40">
+  <book wx:for="{{list}}" wx:key="index" props="{{item}}" ></book>
+</view>

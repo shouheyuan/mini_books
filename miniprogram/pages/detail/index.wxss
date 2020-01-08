@@ -1,0 +1,105 @@
+/* miniprogram/pages/detail/index.wxss */
+page {
+    /* overflow: hidden; */
+    overflow-x: hidden;
+}
+
+.book {
+    text-align: center;
+    padding-top: 50rpx;
+    position: relative;
+}
+
+.fill {
+    position: absolute;
+    width: 30rpx;
+    height: 30rpx;
+    bottom: -30rpx;
+    z-index: 1;
+}
+
+.book .fill:last-child {
+    right: 0;
+}
+
+.book-cover {
+    width: 400rpx;
+    border-radius: 15rpx;
+    box-shadow: 15rpx 15rpx 50rpx 5rpx rgba(0, 0, 0, 0.2);
+}
+
+.canvas {
+    position: fixed;
+    right: -750rpx;
+}
+
+.func {
+    display: flex;
+    justify-content: center;
+}
+
+.func .item {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin: 50rpx 30rpx;
+    /* background-color: #72c7a0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: ; */
+}
+
+.func .item .icon {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.func button.item {
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+} 
+/* 详情信息 */
+.info {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30rpx;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.down-icon {
+    width: 100rpx;
+    height: 15rpx;
+    border-radius: 10rpx;
+    background-color: #e7e7e7;
+    margin-bottom: 50rpx;
+}
+
+
+.name {
+    font-size: 42rpx;
+    font-weight: 500;
+    margin-bottom: 5rpx;
+}
+
+.author {
+    font-size: 28rpx;
+    color: #888893;
+    margin-bottom: 10rpx;
+}
+
+.score {
+    margin-bottom: 40rpx;
+}
+
+.intro {
+    font-size: 26rpx;
+    color: #c4c2ca;
+    line-height: 50rpx;
+}

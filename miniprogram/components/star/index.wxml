@@ -1,0 +1,5 @@
+<!--components/star/index.wxml-->
+<view class="rating">
+    <view class="rating-star allstar{{score | 0}}"></view>
+    <!-- <text class="rating-average">{{score}}</text> -->
+</view>

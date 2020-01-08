@@ -1,0 +1,89 @@
+/* components/book/index.wxss */
+.item {
+    border-radius: 20rpx;
+    box-shadow: 0rpx 6rpx 50rpx #ddd;
+    padding: 35rpx 20rpx;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    margin-bottom: 70rpx;
+}
+
+.cover {
+    width: 230rpx;
+    height: 230rpx;
+    background: url(https://s2.ax1x.com/2019/12/27/lZ0GY6.jpg) 0 0 no-repeat;
+    background-size: 100% 100%;
+    box-shadow: 0rpx 30rpx 20rpx -15rpx #c8c8cf;
+    display: flex;
+    justify-content: center;
+}
+
+.cover image {
+    width: 160rpx;
+    height: 216rpx;
+    border-radius: 5rpx;
+    box-shadow: 20rpx 0 21rpx -16rpx rgba(0, 0, 0, 0.2);
+
+}
+
+/* 图书信息 */
+.info {
+    width: 360rpx;
+    position: relative;
+}
+
+.tag {
+    margin-bottom: 15rpx;
+}
+
+.name {
+    font-size: 28rpx;
+    font-weight: 500;
+    margin-bottom: 10rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.author {
+    font-size: 24rpx;
+    color: #9fa0b1;
+}
+
+.recom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ebf2f0;
+    border-radius: 8rpx;
+    font-size: 24rpx;
+    padding: 5rpx 20rpx;
+    color: #898a96;
+}
+
+/* 动画 */
+
+/*按下缩小*/
+.Press_view {
+    animation: Press_view_key .4s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes Press_view_key {
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    30% {
+        opacity: .8;
+        transform: scale(.95, .95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}

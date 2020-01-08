@@ -1,0 +1,12 @@
+<!--components/book/index.wxml-->
+<view class="item" hover-class="Press_view" hover-start-time="0" hover-stay-time="400" data-url="/pages/detail/index?id={{props._id}}" bindtap="go">
+  <view class="cover">
+    <image mode="aspectFill" src="{{props.cover}}"></image>
+  </view>
+  <view class="info">
+    <view class="tag"><tag value="{{props.tag}}" kind="{{props.kind}}"></tag></view>
+    <view class="name">{{props.name}}</view>
+    <view class="author">{{props.author}}</view>
+    <view class="recom">{{props.read}}人已读🤞</view>
+  </view>
+</view>
