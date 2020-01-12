@@ -1,11 +1,10 @@
 <!--components/bag/index.wxml-->
 <view hover-class="Press_view" hover-start-time="0" hover-stay-time="400">
     <view class="bag bag-{{props.total <= 4 ? props.total : 'more'}}">
-        <image wx:for="{{props.cover}}" class="img" wx:key="index" mode="widthFix" src="{{item}}"></image>
+        <image wx:for="{{props.cover}}" class="img {{index >= 4 ? 'hide' : ''}}" wx:key="index" mode="widthFix" src="{{item}}"></image>
     </view>
     <view class="info">
         <kind-title class="kind" kind="{{props._id}}"></kind-title>
-        <!-- <view class="kind">{{props._id}}</view> -->
         <view class="total">{{props.total}} {{props.total > 1 ? 'BOOKS' : 'BOOK'}}</view>
     </view>
 </view>
