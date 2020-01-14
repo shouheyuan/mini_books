@@ -102,11 +102,27 @@ Page({
       bookid
     }).then(res => {
       let key = 'item.isRead'
-      let data = _this.data.item.isRead === 1 ? 0 : 1 
+      let data = _this.data.item.isRead === 1 ? 0 : 1
       _this.setData({
         [key]: data
       })
     })
+  },
+  // 留言
+  msg() {
+    // 先判断授权 
+    this.setData({
+      releaseFocus: true
+    })
+  },
+  blur() {
+    this.setData({
+      releaseFocus: false
+    })
+  },
+  // 提交留言
+  submit() {
+
   },
   getBackGrounpColor() {
     const data = this.data.item.cover
@@ -125,7 +141,7 @@ Page({
             success: res => {
               let palette = colorThief(res.data)
                 .color()
-                .getHex();
+                .getHex()             
               this.setData({
                 palette: palette
               })

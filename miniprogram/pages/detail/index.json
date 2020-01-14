@@ -1,4 +1,5 @@
 {
+  "navigationBarBackgroundColor": "#f7f7f7",
   "usingComponents": {
     "star": "/components/star/index"
   }

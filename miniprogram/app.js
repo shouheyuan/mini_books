@@ -7,7 +7,7 @@ App({
     $db: null,
     _: null,
     g: {
-        openid: 'omo8U0XMUinQIYFT46d8xeK6EYTA'
+        openid: ''
     },
     onLaunch: function () {
         if (!wx.cloud) {
