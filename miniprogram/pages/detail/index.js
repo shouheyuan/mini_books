@@ -11,6 +11,9 @@ Page({
     item: {},
     // 背景颜色
     palette: '',
+    // 是否授权
+    isAuth: true,
+    msg: ''
   },
 
   /**
@@ -111,8 +114,10 @@ Page({
   // 留言
   msg() {
     // 先判断授权 
+    // isAuth
     this.setData({
-      releaseFocus: true
+      isAuth: false,
+      // releaseFocus: true
     })
   },
   blur() {
@@ -120,9 +125,15 @@ Page({
       releaseFocus: false
     })
   },
+  // 获取输入内容
+  handleInput(e) {
+    this.setData({
+      msg: e.detail.value
+    })
+  },
   // 提交留言
   submit() {
-
+    console.log(this.data.msg)
   },
   getBackGrounpColor() {
     const data = this.data.item.cover
@@ -141,7 +152,7 @@ Page({
             success: res => {
               let palette = colorThief(res.data)
                 .color()
-                .getHex()             
+                .getHex()
               this.setData({
                 palette: palette
               })

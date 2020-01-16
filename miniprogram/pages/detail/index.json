@@ -1,6 +1,7 @@
 {
   "navigationBarBackgroundColor": "#f7f7f7",
   "usingComponents": {
-    "star": "/components/star/index"
+    "star": "/components/star/index",
+    "auth": "/components/modules/auth/index"
   }
 }

@@ -1,0 +1,8 @@
+<!--components/auth/index.wxml-->
+<view wx:if="{{hookValue}}" catchtap="hide" class="auth">
+	<view class="content at">
+		请先授权
+		<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权按钮</button>
+		<view>取消</view>
+	</view>
+</view>

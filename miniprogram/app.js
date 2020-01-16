@@ -7,7 +7,7 @@ App({
     $db: null,
     _: null,
     g: {
-        openid: ''
+        openid: 'omo8U0XMUinQIYFT46d8xeK6EYTA'
     },
     onLaunch: function () {
         if (!wx.cloud) {
@@ -37,6 +37,7 @@ App({
     async login() {
         await this.$cloud('login', {}).then(res => {
             this.g.openid = res.openid
+            console.log('app-login',res.openid)
         })
     },
     // 全局方法

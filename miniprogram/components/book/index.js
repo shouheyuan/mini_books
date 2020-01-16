@@ -22,7 +22,6 @@ Component({
     go(e) {
       wx.vibrateShort({
         complete: () => {
-          console.log(e)
           app.go(e).then(res => {})
         }
       })
