@@ -11,8 +11,8 @@ Page({
     item: {},
     // 背景颜色
     palette: '',
-    // 是否授权
-    isAuth: true,
+    // 是否显示授权模块
+    hasAuth: true,
     msg: ''
   },
 
@@ -112,12 +112,18 @@ Page({
     })
   },
   // 留言
-  msg() {
+  async msg() {
     // 先判断授权 
-    // isAuth
-    this.setData({
-      isAuth: false,
-      // releaseFocus: true
+    await app.isAuth().then(res => {
+      if (res) {
+        this.setData({
+          releaseFocus: true
+        })
+      } else {
+        this.setData({
+          hasAuth: false
+        })
+      }
     })
   },
   blur() {
@@ -133,8 +139,29 @@ Page({
   },
   // 提交留言
   submit() {
-    console.log(this.data.msg)
+    let {
+      bookid,
+      msg
+    } = this.data
+    if (msg) {
+      app.$db.collection('msg').add({
+        data: {
+          bookid,
+          msg
+        }
+      }).then()
+    }
   },
+  // 授权组件-授权成功的回调
+  ok() {
+    this.setData({
+      releaseFocus: true
+    })
+  },
+
+
+
+  /* 被调用类 */
   getBackGrounpColor() {
     const data = this.data.item.cover
     wx.getImageInfo({

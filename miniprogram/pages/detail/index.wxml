@@ -36,4 +36,4 @@
 	<view bindtap="submit" class="submit" style="color: {{palette}}">发送</view>
 </view>
 <!-- 授权-component -->
-<auth value="{{!isAuth}}"></auth>	
+<auth bind:on-ok="ok" value="{{!hasAuth}}"></auth>	

@@ -7,7 +7,8 @@ App({
     $db: null,
     _: null,
     g: {
-        openid: 'omo8U0XMUinQIYFT46d8xeK6EYTA'
+        openid: 'omo8U0XMUinQIYFT46d8xeK6EYTA',
+        isAuth: false
     },
     onLaunch: function () {
         if (!wx.cloud) {
@@ -29,7 +30,7 @@ App({
 
     },
     onShow: function () {
-        this.login()
+        this.isAuth()
     },
     $cloud(name, data) {
         return $cloud(name, data)
@@ -37,7 +38,18 @@ App({
     async login() {
         await this.$cloud('login', {}).then(res => {
             this.g.openid = res.openid
-            console.log('app-login',res.openid)
+            console.log('app-login', res.openid)
+        })
+    },
+    async isAuth() {
+        return await this.$cloud('account', {
+            action: 'isAuth'
+        }).then(res => {
+            this.g.isAuth = res
+            return Promise.resolve(res)
+        }).catch(err => {
+            this.g.isAuth = false
+            return Promise.resolve(false)
         })
     },
     // 全局方法
@@ -51,7 +63,7 @@ App({
         })
     },
     //提示
-    $message(title){
+    $message(title) {
         wx.showToast({
             title: title,
             icon: 'none',
