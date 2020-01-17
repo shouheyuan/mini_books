@@ -1,14 +1,11 @@
 <!--miniprogram/pages/detail/index.wxml-->
 <canvas class="canvas" canvas-id="myCanvas"></canvas>
-<view class="book" style="background-color: {{palette}}">
+<view class="book" style="background-color: {{palette}};">
 	<image bindtap="test" mode="widthFix" class="book-cover" src="{{item.cover}}" />
 	<view class="func">
 		<view class="item" bindtap="read">
 			<image wx:if="{{item.isRead === 0}}" class="icon" src="../../img/read.png"></image>
 			<image wx:if="{{item.isRead === 1}}" class="icon" src="../../img/read_ok.png"></image>
-		</view>
-		<view class="item" bindtap="msg">
-			<image class="icon" src="../../img/msg.png"></image>
 		</view>
 		<button class="item" open-type="share">
 			<image class="icon" src="../../img/share.png"></image>
@@ -29,11 +26,3 @@
 	</view>
 	<view class="intro">{{item.intro}}</view>
 </view>
-<!-- 留言 -->
-<view class="release" hidden="{{!releaseFocus}}">
-	<textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="{{false}}" cursor-spacing="15" auto-height="true" focus="{{releaseFocus}}" placeholder="短评" bindblur="blur" bindinput="handleInput">
-	</textarea>
-	<view bindtap="submit" class="submit" style="color: {{palette}}">发送</view>
-</view>
-<!-- 授权-component -->
-<auth bind:on-ok="ok" value="{{!hasAuth}}"></auth>	

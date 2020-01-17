@@ -21,8 +21,8 @@ Component({
   data: {
 
   },
-  created() {
-
+  created(){
+    
   },
   /**
    * 组件的方法列表

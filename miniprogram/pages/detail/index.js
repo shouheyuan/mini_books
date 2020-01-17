@@ -11,9 +11,6 @@ Page({
     item: {},
     // 背景颜色
     palette: '',
-    // 是否显示授权模块
-    hasAuth: true,
-    msg: ''
   },
 
   /**
@@ -105,63 +102,12 @@ Page({
       bookid
     }).then(res => {
       let key = 'item.isRead'
-      let data = _this.data.item.isRead === 1 ? 0 : 1
+      let data = _this.data.item.isRead === 1 ? 0 : 1 
       _this.setData({
         [key]: data
       })
     })
   },
-  // 留言
-  async msg() {
-    // 先判断授权 
-    await app.isAuth().then(res => {
-      if (res) {
-        this.setData({
-          releaseFocus: true
-        })
-      } else {
-        this.setData({
-          hasAuth: false
-        })
-      }
-    })
-  },
-  blur() {
-    this.setData({
-      releaseFocus: false
-    })
-  },
-  // 获取输入内容
-  handleInput(e) {
-    this.setData({
-      msg: e.detail.value
-    })
-  },
-  // 提交留言
-  submit() {
-    let {
-      bookid,
-      msg
-    } = this.data
-    if (msg) {
-      app.$db.collection('msg').add({
-        data: {
-          bookid,
-          msg
-        }
-      }).then()
-    }
-  },
-  // 授权组件-授权成功的回调
-  ok() {
-    this.setData({
-      releaseFocus: true
-    })
-  },
-
-
-
-  /* 被调用类 */
   getBackGrounpColor() {
     const data = this.data.item.cover
     wx.getImageInfo({
@@ -179,7 +125,7 @@ Page({
             success: res => {
               let palette = colorThief(res.data)
                 .color()
-                .getHex()
+                .getHex();
               this.setData({
                 palette: palette
               })

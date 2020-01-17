@@ -10,10 +10,6 @@ export const $cloud = function (name, data) {
                 reject(new Error(res))
             }
         }).catch(err => {
-            wx.showToast({
-              title: 'err',
-              icon: 'none'
-            })
             reject(err)
         })
     })
