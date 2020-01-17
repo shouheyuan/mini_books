@@ -10,19 +10,17 @@ const $ = db.command.aggregate
 let openid = ''
 
 // 云函数入口函数
-exports.main = async(event, context) => {
+exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   openid = wxContext.OPENID
 
   switch (event.action) {
-    case 'getRead':
-      {
-        return getRead(event, context)
-      }
-    default:
-      {
-        return
-      }
+    case 'getRead': {
+      return getRead(event, context)
+    }
+    default: {
+      return
+    }
   }
 }
 /*
@@ -46,9 +44,10 @@ async function getRead(event) {
     })
     .group({
       _id: '$parentKind',
-      total: $.sum(1),
+      total: $.sum('$read'),
       cover: $.push('$cover')
     })
+    .limit(4)
     .end()
   res.list = list.list
   return res
