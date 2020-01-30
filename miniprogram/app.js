@@ -3,7 +3,7 @@ import {
     $cloud
 } from './util/http'
 App({
-    ENV: 'master-5vigv',
+    ENV: 'master-y1an3',
     $db: null,
     _: null,
     g: {

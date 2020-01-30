@@ -2,7 +2,7 @@ export const $cloud = function (name, data) {
     return new Promise((resolve, reject) => {
         wx.cloud.callFunction({
             name,
-            data
+            data,
         }).then(res => {
             try {
                 resolve(res.result)

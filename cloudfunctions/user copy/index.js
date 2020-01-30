@@ -1,12 +1,13 @@
 const cloud = require('wx-server-sdk')
+// 初始化 cloud
+cloud.init({
+  env: cloud.DYNAMIC_CURRENT_ENV
+})
 const db = cloud.database({
   throwOnNotFound: false
 })
 const _ = db.command
 let openid = ''
-// 初始化 cloud
-cloud.init()
-
 exports.main = (event, context) => {
   const wxContext = cloud.getWXContext()
   openid = wxContext.OPENID
@@ -25,7 +26,6 @@ exports.main = (event, context) => {
 */
 async function update(event) {
   return {
-    
+
   }
 }
-
