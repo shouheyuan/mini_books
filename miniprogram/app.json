@@ -4,7 +4,8 @@
     "pages/album/index",
     "pages/search/index",
     "pages/detail/index",
-    "pages/albumDetail/index"
+    "pages/albumDetail/index",
+    "pages/netdisc/index"
   ],
   "window": {
     "backgroundColor": "#FFF",
@@ -31,6 +32,12 @@
         "text": "书架",
         "iconPath": "img/bar_Album.png",
         "selectedIconPath": "img/bar_Album_sel.png"
+      },
+      {
+        "pagePath": "pages/netdisc/index",
+        "text": "资源",
+        "iconPath": "img/bar_netdisc.png",
+        "selectedIconPath": "img/bar_netdisc_sel.png"
       },
       {
         "pagePath": "pages/search/index",

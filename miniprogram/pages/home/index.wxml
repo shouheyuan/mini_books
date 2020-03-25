@@ -1,35 +1,40 @@
 <!--miniprogram/pages/home/index.wxml-->
-<!-- <view class="m-40 animated fadeInDown"> -->
-<view class="m-40 {{ isAt  ? 'at-show' : 'at-hide'}}">
-<!-- slogan -->
-  <view class="m-b-40">
-    <view class="font-28 fw-300 text-color-title">Your</view>
-    <view class="font-28 fw-600 text-color-title">Bookshelf.</view>
-  </view>
-  <!-- 活动 -->
-  <view class="hide"></view>
-  <!-- 列表 -->
-  <view class="list">
-    <view class="tabBlock">
-      <scroll-view scroll-x scroll-with-animation scroll-left="{{scrollLeft}}" style="height:inherit;">
-        <view class="tab" id="tab_list">
-          <view wx:for="{{tabs}}"
-                wx:key="index"
-                data-index="{{index}}"
-                data-kind="{{item.kind}}"
-                class="tab__item {{ currentIndex === index ? 'tab__item--active' : '' }}"
-                bindtap="select"
-          >
-              <view class="tab__item-title">{{item.title}}</view>
-           </view>
-        </view>
-        <view wx:if="{{isTabLine}}" class="tab__line"
-				  style="width: {{lineStyle.width}};transform: {{lineStyle.transform}};transitionDuration: {{lineStyle.transitionDuration}}">
-			</view>
-      </scroll-view>
-    </view>
-    <view>
-      <book wx:for="{{books}}" wx:key="index" props="{{item}}"></book>
-    </view>
-  </view>
+<view class="mainNav" style="padding-top:{{statusBarHeight}}px;background-color:{{op == true ? '#ffffff00' : '#fff'}}">
+	<image bindtap="open_set" src="/img/icon_App_set.png"></image>
+</view>
+<view style="margin-top:{{50 + statusBarHeight}}px;"></view>
+<view class="m-40  {{op == true ? 'page_f' : 'page_on'}}">
+	<view class="m-b-40">
+		<!-- slogan -->
+		<view class="font-28 fw-300 text-color-title">Your</view>
+		<view class="font-28 fw-600 text-color-title">Bookshelf.</view>
+	</view>
+	<!-- 活动 -->
+	<view class="hide"></view>
+	<!-- 列表 -->
+	<view class="list">
+		<view class="tabBlock">
+			<scroll-view scroll-x scroll-with-animation scroll-left="{{scrollLeft}}" style="height:inherit;">
+				<view class="tab" id="tab_list">
+					<view wx:for="{{tabs}}" wx:key="index" data-index="{{index}}" data-kind="{{item.kind}}" class="tab__item {{ currentIndex === index ? 'tab__item--active' : '' }}" bindtap="select">
+						<view class="tab__item-title">{{item.title}}</view>
+					</view>
+				</view>
+				<view wx:if="{{isTabLine}}" class="tab__line" style="width: {{lineStyle.width}};transform: {{lineStyle.transform}};transitionDuration: {{lineStyle.transitionDuration}}">
+				</view>
+			</scroll-view>
+		</view>
+		<view>
+			<book wx:for="{{books}}" wx:key="index" props="{{item}}"></book>
+		</view>
+	</view>
+</view>
+<!-- 设置 -->
+<view bindtap="open_set" class="mask" wx:if="{{op}}"></view>
+<view class="setting_bar {{op == false ? 'op_f' : 'op_on'}}">
+	<button open-type="contact">联系客服</button>
+		<view>更多功能持续开发中。</view>
+	<view >奖励开发者 ⬇️</view>
+	<image class="zan" src="/img/WechatIMG284.jpeg"></image>
+	<view bindtap="open_set" class="btn">关闭</view>
 </view>

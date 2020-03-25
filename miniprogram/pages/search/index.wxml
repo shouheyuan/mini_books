@@ -3,19 +3,11 @@
 	<view class="title {{ searck_focus == true ? 'hide_title' : 'show_title'}}">搜索</view>
 	<view class="search_group">
 		<view class="search_bg">
-			<image src="../../img/search.png"></image>
-			<input focus class="search_input" placeholder-class="search_input_placeholder" type="text" placeholder="搜索书名或作者" value="{{searchTitle}}" bindinput="changeSearchFunc" bindfocus="pushUpPage" bindblur="pushDownPage" bindconfirm="searchFunc" />
+			<image src="/img/search.png"></image>
+			<input class="search_input" placeholder-class="search_input_placeholder" type="text" placeholder="搜索书名或作者" value="{{searchTitle}}" bindinput="changeSearchFunc" bindfocus="pushUpPage" bindblur="pushDownPage" bindconfirm="searchFunc" />
 		</view>
 	</view>
 
-	<!-- <view class="search_op_bar {{ searck_change == true ? 'hide_search_op' : 'show_search_op'}}" wx:if="{{!searck_change}}">
-		<text>最近搜索</text>
-		<view bindtap="cleanSearchLogFunc">清除</view>
-	</view> -->
-	<!-- 历史记录 -->
-	<!-- <block wx:for="{{Search_history}}" wx:key="unique" wx:if="{{!searck_change}}">
-		<view class="history_font {{ searck_change == true ? 'hide_search_op' : 'show_search_op'}}" bindtap="tagSearchFunc" data-keyword="{{item.searchKey}}">{{item.searchKey}}</view>
-	</block> -->
 
 	<!-- 搜索结果 -->
 
@@ -40,7 +32,6 @@
 			<text>书</text>
 		</view>
 		<view class="list">
-
 			<view class="list_head">
 				<text>搜索到</text>
 				<text style="font-weight:600;margin: 0 8rpx;color:#555;">{{Search_list.length}}</text>
@@ -48,7 +39,7 @@
 			</view>
 
 			<block wx:for="{{Search_list}}" wx:key="index">
-				<view bindtap="go" data-id="{{item._id}}" class="item" style="background-color:{{bk_colarray[index]}};" data-url="/pages/detail/index?id={{item._id}}">
+				<view bindtap="go" data-id="{{item._id}}" class="item" data-url="/pages/detail/index?id={{item._id}}">
 					<view class="item_cover">
 						<image mode="widthFix" src="{{item.cover}}"></image>
 					</view>

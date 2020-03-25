@@ -2,15 +2,18 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
+		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
 		"nodeModules": true,
 		"autoAudits": true,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -83,6 +86,13 @@
 					"name": "albumDetail",
 					"pathName": "pages/albumDetail/index",
 					"query": "parent_kind=100",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/netdisc/index",
+					"pathName": "pages/netdisc/index",
+					"query": "",
 					"scene": null
 				}
 			]

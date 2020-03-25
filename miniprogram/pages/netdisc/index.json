@@ -1,0 +1,6 @@
+{
+  "navigationBarBackgroundColor": "#f5f5f5", 
+  "usingComponents": {
+    "tag": "/components/tag/index"
+  }
+}

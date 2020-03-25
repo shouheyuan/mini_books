@@ -1,0 +1,44 @@
+<!--miniprogram/pages/netdisc/index.wxml-->
+<view class="m-40">
+	<!-- 搜索 -->
+	<view class="search_bg">
+			<image src="/img/search.png"></image>
+			<input class="search_input" placeholder-class="search_input_placeholder" type="text" placeholder="搜索书名或作者" value="{{searchTitle}}" bindinput="changeSearchFunc"  bindconfirm="searchFunc" />
+		</view>
+	<!-- 推荐 -->
+	<view class="package">
+		<view wx:for="{{Recom_list}}" wx:key="index"  bindtap="getPan" data-pan="{{item.pan}}" class="package-item">
+			<view class="package-title">{{item.name}}</view>
+			<view class="display-flex">
+				<view class="package-cover">{{item.name}}</view>
+				<view class="introduction">{{item.introduction}}</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 搜索到详情 -->
+	<view class="{{ searck_change == false ? 'hide_search_op' : 'show_search_op'}}" wx:if="{{searck_change}}" class="list">
+		<view  class="list_head">
+			<text>搜索到</text>
+			<text style="font-weight:600;margin: 0 8rpx;color:#555;">{{Search_list.length}}</text>
+			<text>个</text>
+		</view>
+
+		<block wx:for="{{Search_list}}" wx:key="index">
+			<view bindtap="getPan" data-pan="{{item.pan}}" class="item">
+				<view class="item_cover">
+					<image mode="widthFix" src="{{item.cover}}"></image>
+				</view>
+				<view class="item_left">
+					<text class="item_name">{{item.name}}</text>
+					<text class="item_other">{{item.author}}</text>
+					<tag class="item_tag" value="{{item.tag}}" size="small"></tag>
+				</view>
+			</view>
+		</block>
+		<view  class="list_tail">
+			<text>没有更多了。</text>
+			<text>更多数据, 已在加快更新。</text>
+		</view>
+	</view>
+</view>

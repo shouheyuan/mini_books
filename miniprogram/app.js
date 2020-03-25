@@ -7,7 +7,10 @@ App({
     $db: null,
     _: null,
     g: {
-        openid: 'omo8U0XMUinQIYFT46d8xeK6EYTA'
+        openid: 'omo8U0XMUinQIYFT46d8xeK6EYTA',
+        windowWidth: 0,
+        windowHeight: 0,
+        statusBarHeight: 0,
     },
     onLaunch: function () {
         if (!wx.cloud) {
@@ -30,6 +33,14 @@ App({
     },
     onShow: function () {
         this.login()
+        let _this = this
+        wx.getSystemInfo({
+            success: function (res) {
+                _this.g.windowHeight = res.windowHeight
+                _this.g.windowWidth = res.windowWidth
+                _this.g.statusBarHeight = res.statusBarHeight
+            }
+        })
     },
     $cloud(name, data) {
         return $cloud(name, data)

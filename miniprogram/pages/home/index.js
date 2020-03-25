@@ -19,7 +19,11 @@ Page({
         page: 0,
         pageSize: 10,
         books: [],
-        isAt: false
+        isAt: false,
+        statusBarHeight: app.g.statusBarHeight,
+        windowHeight: app.g.windowHeight,
+        op: false
+
     },
     watch: {
         kind: function (newVal) {
@@ -174,5 +178,12 @@ Page({
         wx.createSelectorQuery().in(this).selectAll(el).boundingClientRect().exec((data) => {
             callback(data[0]);
         });
-    }
+    },
+    // 
+    open_set(e) {
+        let op = this.data.op
+        this.setData({
+            op: !op
+        });
+    },
 })

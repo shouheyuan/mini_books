@@ -8,6 +8,7 @@ page {
     text-align: center;
     padding-top: 50rpx;
     position: relative;
+    background-color: #efefef;
 }
 
 .fill {

@@ -1,11 +1,4 @@
-/* 布局 */
-.display-flex {
-    display: flex;
-}
 
-.flex-wrap-wrap {
-    flex-wrap: wrap;
-}
 
 .m-40 {
     margin: 40rpx;

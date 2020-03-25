@@ -1,0 +1,17 @@
+<!-- components/report/index.wxml -->
+<view wx:if="{{show}}" class="modal" style="z-index:999999;">
+   <view class="modal-content">
+      <view style="display: flex;justify-content: space-between;">
+         <view class="title">收藏到我的相册</view>
+         <view class="close" bindtap="close">
+            <image src="/img/icons/icon-close.png" style="width:115rpx;height:115rpx;" />
+         </view>
+      </view>
+      <!-- <view class="subtitle">如果此画册给您造成不适，请告知我们。</view> -->
+      <view class="list">
+         <view wx:for="{{albumList}}" wx:key="*this" class="item {{  albumId === item.id ? 'active': '' }}" 
+         data-id="{{item.id}}" bindtap="changeBtnFunc">{{item.title}}</view>
+      </view>
+      <button class="btn" bindtap="uploadAssFunc">保存</button>
+   </view>
+</view>
