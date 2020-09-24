@@ -1,7 +1,5 @@
 //app.js
-import {
-    $cloud
-} from './util/http'
+import {$cloud} from './util/http'
 App({
     ENV: 'master-y1an3',
     $db: null,
@@ -13,6 +11,7 @@ App({
         statusBarHeight: 0,
     },
     onLaunch: function () {
+        let _this = this
         if (!wx.cloud) {
             console.error('请使用 2.2.3 或以上的基础库以使用云能力')
         } else {
@@ -24,16 +23,13 @@ App({
                 env: this.ENV,
                 traceUser: true, // 是否在将用户访问记录到用户管理中，在控制台中可见
             })
+            // 数据库脚本
             this.$db = wx.cloud.database({
                 env: this.ENV
             })
+            // 数据库聚合操作符
             this._ = this.$db.command;
         }
-
-    },
-    onShow: function () {
-        this.login()
-        let _this = this
         wx.getSystemInfo({
             success: function (res) {
                 _this.g.windowHeight = res.windowHeight
@@ -41,6 +37,9 @@ App({
                 _this.g.statusBarHeight = res.statusBarHeight
             }
         })
+    },
+    onShow: function () {
+        this.login()
     },
     $cloud(name, data) {
         return $cloud(name, data)

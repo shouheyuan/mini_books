@@ -1,7 +1,5 @@
 // miniprogram/pages/home/index.js
-import {
-    tabs
-} from '../../data/index.js'
+import {tabs} from '../../data/index.js'
 import * as watch from '../../util/watch.js'
 const app = getApp()
 Page({
